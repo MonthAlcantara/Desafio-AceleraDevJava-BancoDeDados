@@ -2,22 +2,22 @@ package com.challenge.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 import javax.persistence.EntityListeners;
+import javax.persistence.ManyToOne;
+import java.io.Serializable;
 
+@Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-@Entity
-public class Submission {
+public class SubmissionId implements Serializable {
 
-    @EmbeddedId
-    private SubmissionId id;
+    @ManyToOne
+    private Challenge challenge;
 
-    @NonNull
-    private Float score;
+    @ManyToOne
+    private User user;
 }

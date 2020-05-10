@@ -1,29 +1,33 @@
 package com.challenge.entity;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import java.time.LocalDate;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@EntityListeners(AuditingEntityListener.class)
 @Entity
 public class Candidate {
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
+    @EmbeddedId
+    private CandidateId id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @Column(name = "acceleration_id", nullable = false)
-    private Long accelerationId;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @Column(name = "company_id", nullable = false)
-    private Long companyId;
-
+    @NonNull
     private int status;
 
+    @CreatedDate
     @Column(name = "created_at")
-    private LocalDate dataCriacao;
+    private LocalDate createdAt;
+
 }

@@ -28,6 +28,8 @@ public class Company {
     private String name;
 
     @NotNull
+    @Size(max = 100)
+    @Column(length = 100)
     private String slug;
 
     @CreatedDate

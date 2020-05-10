@@ -2,7 +2,6 @@ package com.challenge.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -28,8 +27,8 @@ public class Company {
     private String name;
 
     @NotNull
-    @Size(max = 100)
-    @Column(length = 100)
+    @Size(max = 50)
+    @Column(length = 50)
     private String slug;
 
     @CreatedDate

@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -29,6 +30,7 @@ public class User {
     private String fullname;
 
     @NotNull
+    @Email
     @Size(max = 100)
     @Column(length = 100)
     private String email;
@@ -40,7 +42,6 @@ public class User {
 
     @NotNull
     @Size(max = 255)
-    @Column(length = 255)
     private String password;
 
     @CreatedDate

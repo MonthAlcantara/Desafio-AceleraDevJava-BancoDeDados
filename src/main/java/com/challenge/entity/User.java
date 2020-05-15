@@ -24,23 +24,23 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(max = 100)
+    @NotNull(message = "Você deve informar o Nome completo")
+    @Size(max = 100, message = "Seu Nome completo deve ter no máximo 100 caracteres")
     @Column(name = "full_name", length = 100)
     private String fullname;
 
-    @NotNull
+    @NotNull(message = "Você deve informar o email")
     @Email
     @Size(max = 100)
     @Column(length = 100)
     private String email;
 
-    @NotNull
-    @Size(max = 50)
+    @NotNull(message = "Você deve informar um Nickname")
+    @Size(max = 50, message = "Seu Nickname deve ter no máximo 50 caracteres")
     @Column(length = 50)
     private String nickname;
 
-    @NotNull
+    @NotNull(message = "Você deve informar uma Senha")
     @Size(max = 255)
     private String password;
 

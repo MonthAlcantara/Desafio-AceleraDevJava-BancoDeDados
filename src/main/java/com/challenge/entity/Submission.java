@@ -21,7 +21,7 @@ public class Submission {
     @EmbeddedId
     private SubmissionId id;
 
-    @NotNull
+    @NotNull(message = "Informe o Score")
     private Float score;
 
     @CreatedDate

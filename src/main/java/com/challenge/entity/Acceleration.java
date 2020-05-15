@@ -22,8 +22,8 @@ public class Acceleration {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(max = 100)
+    @NotNull(message = "Você deve informar o nome da Aceleração")
+    @Size(max = 100, message = "O nome da Aceleração deve ter no máximo 100 caracteres")
     @Column(length = 100)
     private String name;
 

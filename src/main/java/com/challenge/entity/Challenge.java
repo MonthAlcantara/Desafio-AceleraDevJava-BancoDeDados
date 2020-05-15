@@ -22,8 +22,8 @@ public class Challenge {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(max = 100)
+    @NotNull(message = "Você deve informar o nome do Desafio")
+    @Size(max = 100, message = "O nome do Desafio deve ter no máximo 100 caracteres")
     @Column(length = 100)
     private String name;
 

@@ -27,7 +27,6 @@ public class Candidate {
     private int status;
 
     @CreatedDate
-    @Column(name = "created_at")
     private LocalDate createdAt;
 
 }

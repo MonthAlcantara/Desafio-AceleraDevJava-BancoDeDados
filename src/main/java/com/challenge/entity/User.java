@@ -45,7 +45,6 @@ public class User {
     private String password;
 
     @CreatedDate
-    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "id.user")

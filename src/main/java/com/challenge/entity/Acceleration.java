@@ -36,7 +36,6 @@ public class Acceleration {
     private Challenge challenge;
 
     @CreatedDate
-    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "id.acceleration")
